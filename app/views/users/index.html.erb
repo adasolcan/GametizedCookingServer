@@ -3,7 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Fb</th>
+      <th>Id</th>
+      <th>Fb id</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Score</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td> 
         <td><%= user.fb_id %></td>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>

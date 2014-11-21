@@ -772,3 +772,877 @@ Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-20 16:10:36 +02
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 16:10:36 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategories (20141120223612)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "score" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141120223612"]]
+  [1m[36m (136.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRecipes (20141121133406)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "message" text, "score" integer, "category_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141121133406"]]
+  [1m[36m (141.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-21 15:47:11 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 4121ms (Views: 4032.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:47:17 +0200
+
+
+Started GET "/category" for 127.0.0.1 at 2014-11-21 15:47:40 +0200
+
+ActionController::RoutingError (No route matches [GET] "/category"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ada/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/ada/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/ada/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.5ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (76.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:47:53 +0200
+Processing by CategoriesController#index as HTML
+Completed 500 Internal Server Error in 210ms
+
+NoMethodError (undefined method `has_may' for #<Class:0x00000004182690>):
+  app/models/category.rb:2:in `<class:Category>'
+  app/models/category.rb:1:in `<top (required)>'
+  app/controllers/categories_controller.rb:7:in `index'
+
+
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (156.6ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:48:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 557ms (Views: 452.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:44 +0200
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2014-11-21 15:48:47 +0200
+Processing by CategoriesController#new as HTML
+  Rendered categories/_form.html.erb (221.6ms)
+  Rendered categories/new.html.erb within layouts/application (239.6ms)
+Completed 200 OK in 349ms (Views: 346.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2014-11-21 15:48:57 +0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzU/0Bv6JFV7MgUP3ie6mgPehmoX+K4J+/3wCx5CppQ=", "category"=>{"name"=>"abcd", "description"=>"desc", "score"=>"10"}, "commit"=>"Create Category"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (282.8ms)[0m  INSERT INTO "categories" ("created_at", "description", "name", "score", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-11-21 13:48:57.262860"], ["description", "desc"], ["name", "abcd"], ["score", 10], ["updated_at", "2014-11-21 13:48:57.262860"]]
+  [1m[36m (569.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 985ms (ActiveRecord: 852.1ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 111ms (Views: 108.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:48:58 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:49:02 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2014-11-21 15:49:06 +0200
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 184ms
+
+SyntaxError (/home/ada/Documents/facultate/master2/sem1/PSE/GametizedCookingServer/app/models/recipe.rb:2: syntax error, unexpected ':', expecting keyword_end
+  belongs_to: category
+             ^):
+  app/models/recipe.rb:2: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/recipes_controller.rb:7:in `index'
+
+
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.9ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2014-11-21 15:49:46 +0200
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 150ms (Views: 118.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:49:47 +0200
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2014-11-21 15:49:49 +0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/_form.html.erb (12.3ms)
+  Rendered recipes/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 131ms (Views: 129.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzU/0Bv6JFV7MgUP3ie6mgPehmoX+K4J+/3wCx5CppQ=", "recipe"=>{"name"=>"ekdfo", "description"=>"dws", "message"=>"mfkm", "score"=>"200", "category_id"=>"1"}, "commit"=>"Create Recipe"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("category_id", "created_at", "description", "message", "name", "score", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-11-21 13:50:06.446439"], ["description", "dws"], ["message", "mfkm"], ["name", "ekdfo"], ["score", 200], ["updated_at", "2014-11-21 13:50:06.446439"]]
+  [1m[36m (274.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 279ms (ActiveRecord: 275.2ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 121ms (Views: 119.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:50:06 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:07 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:07 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:07 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:07 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:07 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:07 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:50:07 +0200
+
+
+Started GET "/recipes" for 127.0.0.1 at 2014-11-21 15:50:11 +0200
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 91ms (Views: 89.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 102ms (Views: 97.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:52:11 +0200
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-11-21 15:52:14 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered categories/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 88ms (Views: 86.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:52:17 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 84ms (Views: 82.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 80ms (Views: 79.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:34 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 99ms (Views: 97.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:35 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 85ms (Views: 83.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:36 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 99ms (Views: 98.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 85ms (Views: 83.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 67ms (Views: 66.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:37 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 94ms (Views: 93.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:53:38 +0200
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:54:44 +0200
+
+
+Started GET "/users" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 149ms (Views: 114.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-21 15:58:04 +0200
