@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Description</th>
       <th>Date time</th>
       <th>Picture</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @checkins.each do |checkin| %>
       <tr>
+        <td><%= checkin.id %></td>
         <td><%= checkin.description %></td>
         <td><%= checkin.date_time %></td>
         <td><%= checkin.picture %></td>

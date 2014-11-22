@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th>Description</th>
       <th>Score</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @badges.each do |badge| %>
       <tr>
+        <td><%= badge.id %></td>
         <td><%= badge.name %></td>
         <td><%= badge.description %></td>
         <td><%= badge.score %></td>
