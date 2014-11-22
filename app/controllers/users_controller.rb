@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @same_fb_id = User.find_by_fb_id(@user.fb_id)
     if @same_fb_id == nil
-        @user.save
+      @user.save
     end
     respond_with @user
   end
@@ -42,9 +42,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-      @user = User.find(params[:id])
-      @user.update_attributes(params[:user])
-      respond_with @user
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    respond_with @user
   end
 
   # DELETE /users/1
