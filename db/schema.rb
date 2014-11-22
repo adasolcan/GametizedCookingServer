@@ -11,12 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121133406) do
+ActiveRecord::Schema.define(version: 20141122212816) do
+
+  create_table "badges", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "score"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "checkins", force: true do |t|
+    t.text     "description"
+    t.datetime "date_time"
+    t.string   "picture"
+    t.integer  "user_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "has_badges", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "badge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

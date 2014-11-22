@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :checkins
+
+  resources :has_badges
+
+  resources :badges
+
   resources :recipes
 
   resources :categories
