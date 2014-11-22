@@ -9,6 +9,18 @@ class CheckinsController < ApplicationController
     respond_with @checkins
   end
 
+  def show_by_user_id
+    @checkins = Checkin.find_by_user_id(params[:user_id])
+    @all = @checkins.show_by_user_id({:user_id => params[:user_id]})
+    respond_with @all
+  end
+
+  def show_by_recipe_id
+    @checkins = Checkin.find_by_recipe_id(params[:recipe_id])
+    @all = @checkins.show_by_recipe_id({:recipe_id => params[:recipe_id]})
+    respond_with @all
+  end
+
   # GET /checkins/1
   # GET /checkins/1.json
   def show
