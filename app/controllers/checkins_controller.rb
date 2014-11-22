@@ -39,7 +39,6 @@ class CheckinsController < ApplicationController
   # PATCH/PUT /checkins/1
   # PATCH/PUT /checkins/1.json
   def update
-    respond_to do |format|
     @checkin.update(checkin_params)
     respond_with @checkin
   end
