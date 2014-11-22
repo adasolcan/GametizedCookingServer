@@ -1,64 +1,55 @@
 class HasBadgesController < ApplicationController
   before_action :set_has_badge, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   # GET /has_badges
   # GET /has_badges.json
   def index
     @has_badges = HasBadge.all
+    respond_with @has_badges
   end
 
   # GET /has_badges/1
   # GET /has_badges/1.json
   def show
+    @has_badge = HasBadge.find(params[:id])
+    respond_with @has_badge
   end
 
   # GET /has_badges/new
   def new
     @has_badge = HasBadge.new
+    respond_with @has_badge
   end
 
   # GET /has_badges/1/edit
   def edit
+    @has_badge = HasBadge.find(params[:id])
+    respond_with @has_badge
   end
 
   # POST /has_badges
   # POST /has_badges.json
   def create
     @has_badge = HasBadge.new(has_badge_params)
-
-    respond_to do |format|
-      if @has_badge.save
-        format.html { redirect_to @has_badge, notice: 'Has badge was successfully created.' }
-        format.json { render :show, status: :created, location: @has_badge }
-      else
-        format.html { render :new }
-        format.json { render json: @has_badge.errors, status: :unprocessable_entity }
-      end
-    end
+    @has_badge.save
+    respond_with @has_badge
   end
 
   # PATCH/PUT /has_badges/1
   # PATCH/PUT /has_badges/1.json
   def update
-    respond_to do |format|
-      if @has_badge.update(has_badge_params)
-        format.html { redirect_to @has_badge, notice: 'Has badge was successfully updated.' }
-        format.json { render :show, status: :ok, location: @has_badge }
-      else
-        format.html { render :edit }
-        format.json { render json: @has_badge.errors, status: :unprocessable_entity }
-      end
-    end
+    @has_badge = HasBadge.find(params[:id])
+    @has_badge.update(has_badge_params)
+    respond_with @has_badge
   end
 
   # DELETE /has_badges/1
   # DELETE /has_badges/1.json
   def destroy
+    @has_badge = HasBadge.find(params[:id])
     @has_badge.destroy
-    respond_to do |format|
-      format.html { redirect_to has_badges_url, notice: 'Has badge was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with @has_badge
   end
 
   private

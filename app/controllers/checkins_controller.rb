@@ -1,64 +1,54 @@
 class CheckinsController < ApplicationController
   before_action :set_checkin, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   # GET /checkins
   # GET /checkins.json
   def index
     @checkins = Checkin.all
+    respond_with @checkins
   end
 
   # GET /checkins/1
   # GET /checkins/1.json
   def show
+    @checkin = Checkin.find(params[:id])
+    respond_with @checkin
   end
 
   # GET /checkins/new
   def new
     @checkin = Checkin.new
+    respond_with @checkin
   end
 
   # GET /checkins/1/edit
   def edit
+    @checkin = Checkin.find(params[:id])  
+    respond_with @checkin
   end
 
   # POST /checkins
   # POST /checkins.json
   def create
     @checkin = Checkin.new(checkin_params)
-
-    respond_to do |format|
-      if @checkin.save
-        format.html { redirect_to @checkin, notice: 'Checkin was successfully created.' }
-        format.json { render :show, status: :created, location: @checkin }
-      else
-        format.html { render :new }
-        format.json { render json: @checkin.errors, status: :unprocessable_entity }
-      end
-    end
+    @checkin.save
+    respond_with @checkin
   end
 
   # PATCH/PUT /checkins/1
   # PATCH/PUT /checkins/1.json
   def update
     respond_to do |format|
-      if @checkin.update(checkin_params)
-        format.html { redirect_to @checkin, notice: 'Checkin was successfully updated.' }
-        format.json { render :show, status: :ok, location: @checkin }
-      else
-        format.html { render :edit }
-        format.json { render json: @checkin.errors, status: :unprocessable_entity }
-      end
-    end
+    @checkin.update(checkin_params)
+    respond_with @checkin
   end
 
   # DELETE /checkins/1
   # DELETE /checkins/1.json
   def destroy
     @checkin.destroy
-    respond_to do |format|
-      format.html { redirect_to checkins_url, notice: 'Checkin was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with @checkin
   end
 
   private
