@@ -2948,3 +2948,20 @@ Processing by CheckinsController#show_by_recipe_id as JSON
   [1m[35mCheckin Load (0.2ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."recipe_id" = 1 LIMIT 1
   [1m[36mCheckin Load (0.2ms)[0m  [1mSELECT "checkins".* FROM "checkins"  WHERE "checkins"."recipe_id" = 1[0m
 Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/checkins/1/show_by_user_id.json" for 127.0.0.1 at 2014-11-23 23:33:27 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CheckinsController#show_by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[35mCheckin Load (0.2ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."user_id" = 1 LIMIT 1
+  [1m[36mCheckin Load (0.2ms)[0m  [1mSELECT "checkins".* FROM "checkins"  WHERE "checkins"."user_id" = 1[0m
+Completed 200 OK in 229ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/has_badges/1/show_by_user_id.json" for 127.0.0.1 at 2014-11-24 00:21:21 +0200
+Processing by HasBadgesController#show_by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[35mHasBadge Load (0.1ms)[0m  SELECT  "has_badges".* FROM "has_badges"  WHERE "has_badges"."user_id" = 1 LIMIT 1
+  [1m[36mHasBadge Load (0.2ms)[0m  [1mSELECT "has_badges".* FROM "has_badges"  WHERE "has_badges"."user_id" = 1[0m
+Completed 200 OK in 101ms (Views: 1.9ms | ActiveRecord: 0.7ms)

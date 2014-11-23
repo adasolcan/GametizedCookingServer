@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   resources :users
 
   match 'recipes/:category_id/show_by_category_id', to: 'recipes#show_by_category_id', :via => :get, action: 'show_by_category_id'
+  
   match 'checkins/:user_id/show_by_user_id', to: 'checkins#show_by_user_id', :via => :get, action: 'show_by_user_id'
   match 'checkins/:recipe_id/show_by_recipe_id', to: 'checkins#show_by_recipe_id', :via => :get, action: 'show_by_recipe_id'
+
+  match 'has_badges/:user_id/show_by_user_id', to: 'has_badges#show_by_user_id', :via => :get, action: 'show_by_user_id'
+  match 'has_badges/:badge_id/show_by_badge_id', to: 'has_badges#show_by_badge_id', :via => :get, action: 'show_by_badge_id'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

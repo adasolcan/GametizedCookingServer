@@ -9,6 +9,18 @@ class HasBadgesController < ApplicationController
     respond_with @has_badges
   end
 
+  def show_by_user_id
+    @has_badges = HasBadge.find_by_user_id(params[:user_id])
+    @all = @has_badges.show_by_user_id({:user_id => params[:user_id]})
+    respond_with @all
+  end
+
+  def show_by_badge_id
+    @has_badges = HasBadge.find_by_badge_id(params[:badge_id])
+    @all = @has_badges.show_by_badge_id({:badge_id => params[:badge_id]})
+    respond_with @all
+  end
+
   # GET /has_badges/1
   # GET /has_badges/1.json
   def show
