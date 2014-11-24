@@ -2965,3 +2965,364 @@ Processing by HasBadgesController#show_by_user_id as JSON
   [1m[35mHasBadge Load (0.1ms)[0m  SELECT  "has_badges".* FROM "has_badges"  WHERE "has_badges"."user_id" = 1 LIMIT 1
   [1m[36mHasBadge Load (0.2ms)[0m  [1mSELECT "has_badges".* FROM "has_badges"  WHERE "has_badges"."user_id" = 1[0m
 Completed 200 OK in 101ms (Views: 1.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/has_badges/1/show_by_user_id.json" for 127.0.0.1 at 2014-11-24 13:08:57 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HasBadgesController#show_by_user_id as JSON
+  Parameters: {"user_id"=>"1"}
+  [1m[35mHasBadge Load (0.2ms)[0m  SELECT  "has_badges".* FROM "has_badges"  WHERE "has_badges"."user_id" = 1 LIMIT 1
+  [1m[36mHasBadge Load (0.2ms)[0m  [1mSELECT "has_badges".* FROM "has_badges"  WHERE "has_badges"."user_id" = 1[0m
+Completed 200 OK in 778ms (Views: 1.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-24 13:09:00 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (70.6ms)
+Completed 200 OK in 1618ms (Views: 1617.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/checkins" for 127.0.0.1 at 2014-11-24 13:09:03 +0200
+Processing by CheckinsController#index as HTML
+  [1m[35mCheckin Load (0.2ms)[0m  SELECT "checkins".* FROM "checkins"
+  Rendered checkins/index.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 314ms (Views: 235.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:04 +0200
+
+
+Started GET "/checkins/1/edit" for 127.0.0.1 at 2014-11-24 13:09:08 +0200
+Processing by CheckinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCheckin Load (0.2ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered checkins/_form.html.erb (238.1ms)
+  Rendered checkins/edit.html.erb within layouts/application (282.5ms)
+Completed 200 OK in 423ms (Views: 420.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/checkins/1" for 127.0.0.1 at 2014-11-24 13:09:58 +0200
+Processing by CheckinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzU/0Bv6JFV7MgUP3ie6mgPehmoX+K4J+/3wCx5CppQ=", "checkin"=>{"description"=>"My first check-in", "date_time(1i)"=>"2014", "date_time(2i)"=>"11", "date_time(3i)"=>"22", "date_time(4i)"=>"22", "date_time(5i)"=>"28", "picture"=>#<ActionDispatch::Http::UploadedFile:0x000000034f6728 @tempfile=#<File:/tmp/RackMultipart20141124-3630-46cvam>, @original_filename="IMAG2433.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"checkin[picture]\"; filename=\"IMAG2433.jpg\"\r\nContent-Type: image/jpeg\r\n">, "user_id"=>"1", "recipe_id"=>"1"}, "commit"=>"Update Checkin", "id"=>"1"}
+  [1m[36mCheckin Load (0.1ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCheckin Load (0.1ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (74.3ms)[0m  UPDATE "checkins" SET "picture" = ?, "updated_at" = ? WHERE "checkins"."id" = 1  [["picture", "IMAG2433.jpg"], ["updated_at", "2014-11-24 11:09:58.732195"]]
+  [1m[36m (274.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/checkins/1
+Completed 302 Found in 861ms (ActiveRecord: 349.0ms)
+
+
+Started GET "/checkins/1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+Processing by CheckinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCheckin Load (0.1ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered checkins/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 141ms (Views: 139.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-24 13:09:59 +0200
+
+
+Started GET "/checkins/1" for 127.0.0.1 at 2014-11-24 13:11:17 +0200
+Processing by CheckinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCheckin Load (0.2ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered checkins/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `picture' for nil:NilClass):
+    12: 
+    13: <p>
+    14:   <strong>Picture:</strong>
+    15:   <%= image_tag(@checkin.picture_url, :width => 600) if @idea.picture.present? %>
+    16: </p>
+    17: 
+    18: <p>
+  app/views/checkins/show.html.erb:15:in `_app_views_checkins_show_html_erb___3994359385328116988_24228340'
+  app/controllers/checkins_controller.rb:28:in `show'
+
+
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.9ms)
+
+
+Started GET "/checkins/1" for 127.0.0.1 at 2014-11-24 13:11:19 +0200
+Processing by CheckinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCheckin Load (0.1ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered checkins/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `picture' for nil:NilClass):
+    12: 
+    13: <p>
+    14:   <strong>Picture:</strong>
+    15:   <%= image_tag(@checkin.picture_url, :width => 600) if @idea.picture.present? %>
+    16: </p>
+    17: 
+    18: <p>
+  app/views/checkins/show.html.erb:15:in `_app_views_checkins_show_html_erb___3994359385328116988_24228340'
+  app/controllers/checkins_controller.rb:28:in `show'
+
+
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/checkins/1" for 127.0.0.1 at 2014-11-24 13:11:36 +0200
+Processing by CheckinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCheckin Load (0.2ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered checkins/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 158ms (Views: 155.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:37 +0200
+
+
+Started GET "/checkins/1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+Processing by CheckinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCheckin Load (0.2ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered checkins/show.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 147ms (Views: 143.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-24 13:11:48 +0200
