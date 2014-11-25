@@ -1,4 +1,6 @@
 class BadgesController < ApplicationController
+  protect_from_forgery :except => [:update, :delete, :create]
+    
   before_action :set_badge, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json
 

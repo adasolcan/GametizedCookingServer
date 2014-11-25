@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  protect_from_forgery :except => [:update, :delete, :create]
+    
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories

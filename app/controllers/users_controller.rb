@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  protect_from_forgery :except => :create
-    
+  protect_from_forgery :except => [:update, :delete, :create]
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json
 
