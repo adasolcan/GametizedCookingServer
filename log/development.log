@@ -7094,3 +7094,22 @@ Processing by CheckinsController#show as JSON
   [1m[35mCACHE (0.0ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", "1"]]
   Rendered checkins/show.json.jbuilder (40.2ms)
 Completed 200 OK in 70ms (Views: 65.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/checkins/1.json" for 127.0.0.1 at 2014-12-06 21:36:41 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CheckinsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mCheckin Load (0.1ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered checkins/show.json.jbuilder (63.7ms)
+Completed 200 OK in 297ms (Views: 161.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/checkins/1.json" for 127.0.0.1 at 2014-12-06 21:36:44 +0200
+Processing by CheckinsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mCheckin Load (0.1ms)[0m  SELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "checkins".* FROM "checkins"  WHERE "checkins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered checkins/show.json.jbuilder (0.5ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.1ms)
