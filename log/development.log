@@ -272,3 +272,27 @@ Migrating to CreatePlans (20141214224911)
   [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141214224911"]]
   [1m[36m (204.6ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeUserIdTypeInCheckins (20141214230015)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "acheckins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "date_time" datetime, "picture" varchar(255), "user_id" integer, "recipe_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "checkins"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "checkins"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "checkins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "date_time" datetime, "picture" varchar(255), "user_id" varchar(255), "recipe_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "acheckins"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "acheckins"
+  [1m[36mSQL (30.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141214230015"]]
+  [1m[35m (303.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeUserIdTypeInHasBadges (20141214230327)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "ahas_badges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "badge_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "has_badges"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "has_badges"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "has_badges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" varchar(255), "badge_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "ahas_badges"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "ahas_badges"
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141214230327"]]
+  [1m[35m (157.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
