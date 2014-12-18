@@ -11,6 +11,12 @@ class UsersController < ApplicationController
     respond_with @users
   end
 
+  def show_by_fb_id
+    @users = User.find_by_fb_id(params[:fb_id])
+    @all = @users.show_by_user_id({:fb_id => params[:fb_id]})
+    respond_with @all
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  match 'users/:fb_id/show_by_fb_id', to: 'users#show_by_fb_id', :via => :get, action: 'show_by_fb_id'
+  
   match 'recipes/:category_id/show_by_category_id', to: 'recipes#show_by_category_id', :via => :get, action: 'show_by_category_id'
   
   match 'checkins/:user_id/show_by_user_id', to: 'checkins#show_by_user_id', :via => :get, action: 'show_by_user_id'
