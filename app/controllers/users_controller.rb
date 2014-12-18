@@ -44,8 +44,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
+    @user.update(user_params)
     respond_with @user
   end
 
