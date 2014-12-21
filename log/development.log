@@ -1240,3 +1240,10 @@ Processing by UsersController#show_by_fb_id as JSON
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."fb_id" = '123478' LIMIT 1
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."fb_id" = '123478'[0m
 Completed 200 OK in 135ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDateTimeToPlans (20141221174655)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (29.3ms)[0m  [1mALTER TABLE "plans" ADD "date_time" datetime[0m
+  [1m[35mSQL (55.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141221174655"]]
+  [1m[36m (351.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
