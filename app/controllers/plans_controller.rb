@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  protect_from_forgery :except => [:update, :delete, :create]
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
   # GET /plans
