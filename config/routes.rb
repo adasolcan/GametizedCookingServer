@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   match 'checkins/:user_id/show_by_user_id', to: 'checkins#show_by_user_id', :via => :get, action: 'show_by_user_id'
   match 'checkins/:recipe_id/show_by_recipe_id', to: 'checkins#show_by_recipe_id', :via => :get, action: 'show_by_recipe_id'
 
+  match 'plans/:user_id/show_by_user_id', to: 'plans#show_by_user_id', :via => :get, action: 'show_by_user_id'
+
   match 'has_badges/:user_id/show_by_user_id', to: 'has_badges#show_by_user_id', :via => :get, action: 'show_by_user_id'
   match 'has_badges/:badge_id/show_by_badge_id', to: 'has_badges#show_by_badge_id', :via => :get, action: 'show_by_badge_id'
 

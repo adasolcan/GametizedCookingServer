@@ -8,6 +8,12 @@ class PlansController < ApplicationController
     @plans = Plan.all
   end
 
+  def show_by_user_id
+    @plans = Plan.find_by_user_id(params[:user_id])
+    @all = @plans.show_by_user_id({:user_id => params[:user_id]})
+    respond_with @all
+  end
+
   # GET /plans/1
   # GET /plans/1.json
   def show
@@ -70,6 +76,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:user_id, :name, :plan_details)
+      params.require(:plan).permit(:user_id, :name, :plan_details, :date_time)
     end
 end
