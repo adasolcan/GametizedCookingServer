@@ -1798,3 +1798,359 @@ Processing by PlansController#index as HTML
   [1m[35mPlan Load (0.2ms)[0m  SELECT "plans".* FROM "plans"
   Rendered plans/index.html.erb within layouts/application (3.7ms)
 Completed 200 OK in 144ms (Views: 143.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans" for 127.0.0.1 at 2014-12-21 20:16:32 +0200
+Processing by PlansController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1mSELECT "plans".* FROM "plans"[0m
+  Rendered plans/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 145ms (Views: 142.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:33 +0200
+
+
+Started GET "/plans.josn" for 127.0.0.1 at 2014-12-21 20:16:36 +0200
+Processing by PlansController#index as 
+Completed 406 Not Acceptable in 3ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/plans_controller.rb:11:in `index'
+
+
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/plans.json" for 127.0.0.1 at 2014-12-21 20:16:39 +0200
+Processing by PlansController#index as JSON
+  [1m[35mPlan Load (0.2ms)[0m  SELECT "plans".* FROM "plans"
+  Rendered plans/index.json.jbuilder (405.0ms)
+Completed 200 OK in 433ms (Views: 430.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlan Load (0.6ms)[0m  [1mSELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered plans/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 126ms (Views: 121.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-21 20:16:54 +0200
+
+
+Started GET "/plans/1.json" for 127.0.0.1 at 2014-12-21 20:17:01 +0200
+Processing by PlansController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlan Load (0.3ms)[0m  [1mSELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered plans/show.json.jbuilder (2.4ms)
+Completed 200 OK in 90ms (Views: 85.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/plans/1.json" for 127.0.0.1 at 2014-12-21 20:21:44 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlansController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered plans/show.json.jbuilder (23.1ms)
+Completed 200 OK in 576ms (Views: 170.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/plans/1" for 127.0.0.1 at 2014-12-21 20:21:53 +0200
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered plans/show.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 784ms (Views: 782.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:54 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:55 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:55 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:55 +0200
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:55 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:55 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:55 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-21 20:21:55 +0200
+
+
+Started GET "/plans/1.json" for 127.0.0.1 at 2014-12-21 20:23:20 +0200
+Processing by PlansController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mPlan Load (0.2ms)[0m  SELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered plans/show.json.jbuilder (0.7ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/plans/1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPlan Load (0.1ms)[0m  SELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered plans/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 128ms (Views: 125.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-21 20:23:28 +0200
+
+
+Started GET "/plans/1.json" for 127.0.0.1 at 2014-12-21 20:27:45 +0200
+Processing by PlansController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mPlan Load (0.2ms)[0m  SELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "plans".* FROM "plans"  WHERE "plans"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered plans/show.json.jbuilder (0.7ms)
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 0.3ms)
