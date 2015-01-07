@@ -17,9 +17,9 @@ class CheckinsController < ApplicationController
     respond_with @all
   end
 
-  def show_by_recipe_id
-    @checkins = Checkin.find_by_recipe_id(params[:recipe_id])
-    @all = @checkins.show_by_recipe_id({:recipe_id => params[:recipe_id]})
+  def show_by_category_id
+    @checkins = Checkin.find_by_category_id(params[:category_id])
+    @all = @checkins.show_by_category_id({:category_id => params[:category_id]})
     respond_with @all
   end
 
@@ -72,6 +72,6 @@ class CheckinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def checkin_params
-      params.require(:checkin).permit(:description, :date_time, :picture, :user_id, :recipe_id)
+      params.require(:checkin).permit(:description, :date_time, :picture, :user_id, :category_id)
     end
 end

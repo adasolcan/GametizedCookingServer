@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-    has_many :recipe, :foreign_key => "category_id"
+    has_many :checkin, :foreign_key => "recipe_id"
 end
