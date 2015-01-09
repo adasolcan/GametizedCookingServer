@@ -2168,3 +2168,98 @@ Migrating to RenameRecipeIdToCategoryIdInCheckins (20150107224639)
   [1m[36mSQL (38.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150107224639"]]
   [1m[35m (140.4ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/checkins" for 127.0.0.1 at 2015-01-10 01:33:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CheckinsController#index as HTML
+  [1m[35mCheckin Load (0.2ms)[0m  SELECT "checkins".* FROM "checkins"
+  Rendered checkins/index.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 676ms (Views: 567.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/badges.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/checkins.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/has_badges.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/recipes.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/badges.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/checkins.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/has_badges.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/recipes.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-10 01:33:50 +0200
+
+
+Started GET "/checkins.json" for 127.0.0.1 at 2015-01-10 01:33:56 +0200
+Processing by CheckinsController#index as JSON
+  [1m[36mCheckin Load (0.2ms)[0m  [1mSELECT "checkins".* FROM "checkins"[0m
+  Rendered checkins/index.json.jbuilder (44.3ms)
+Completed 500 Internal Server Error in 92ms
+
+ActionView::Template::Error (undefined method `recipe_id' for #<Checkin:0x00000003c72ec0>):
+    1: json.array!(@checkins) do |checkin|
+    2:   json.extract! checkin, :id, :description, :date_time, :picture, :user_id, :recipe_id
+    3:   json.url checkin_url(checkin, format: :json)
+    4: end
+  app/views/checkins/index.json.jbuilder:2:in `block in _app_views_checkins_index_json_jbuilder__2569575840021101878_31734640'
+  app/views/checkins/index.json.jbuilder:1:in `_app_views_checkins_index_json_jbuilder__2569575840021101878_31734640'
+  app/controllers/checkins_controller.rb:11:in `index'
+
+
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ada/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.0ms)
