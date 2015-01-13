@@ -47,6 +47,9 @@ class CheckinsController < ApplicationController
   def create
     @checkin = Checkin.new(checkin_params)
     @checkin.save
+    @user = User.find_by_fb_id(@checkin.user_id)
+    @category = Category.find_by_id(@checkin.category_id)
+    @user.update_attributes(:score => (@user.score + @category.score))
     respond_with @checkin
   end
 
