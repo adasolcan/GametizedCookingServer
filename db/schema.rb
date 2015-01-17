@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20150117154421) do
     t.string   "name"
     t.text     "description"
     t.integer  "score"
+    t.string   "image_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_id"
   end
 
   create_table "checkins", force: true do |t|
